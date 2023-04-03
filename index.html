@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Prova</title>
+</head>
+<body>
+    <div class="caixa-de-texto"> <!-- O CORPO Do xet-->          
+        <div class="titulo">
+            <p> Xet GPT do Paraguai</p>
+        </div>
+
+        <p id="aguarde"></p>
+
+        <div id="historico">
+            <!--Aqui mostra como é a construção do xet como o historico da pesquisa e
+            o carregamento das perguntas-->
+        </div>    
+        
+            <!--rodape do meu xet, vai ficar responsavel pela parte de enviar a mensagem-->
+        <div class="rodape">
+            <input type="texto" placeholder="Faça sua pergunta pro xet..." id="mensagem">
+            <button id="botao" onclick="enviaMensagem()">Enviar</button>
+        </div>
+        <div class=" carrossel">
+            <div class="container" id="img">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeYAAABoCAMAAAATgKPhAAAA0lBMVEUAesz///8AL14Adstlqt4AdcoAeMsAc8oALFwAg9BRntkAKlsAKFqCteIAcMkAJllHmtgAIlcAHlUAHFQAfs719/kAFlLr7/L4/P7m8voAFFHZ7PgAGVPDy9Xu9/xZbosUO2fG3vKtuMbU2uJtptuVo7Tg5eqpyek/XH4AEFElitLR5/aYxeiv0e16jqW9xtFug5xSa4uksL8vTnSImKyNvOQhP2g/jtPX3uTH4vSAuONzsOGmx+g8Wn0QP2snSXEAA016q91kepWbp7i91u5RYoAKxwS+AAATKElEQVR4nL1da1vbOBONk1pxsMk9JBACuSwphHIJ95YF3lL6///Sm8SWLdvSzMiW9jz7aRtLWMfSaI5mRhWHgsmTV5Ui+OvMO/J/SmF6vz6bvJD6eqC0F6H7tnTG9UoxNFar9rfXx9nlIenvcsbNgh0p4P4O270q+gIU1K52fVQoL3hT9RXj3Ll2nNMWgRDP73Snf68XA6yvW0prnOXToeM8Fh0ltoXruv1V+9fsBB+FH4bpqIcMOPuu2XZFMHZIpnneVbFcPbhxnEWPyMqG6oPzPwjLB3SWDz5Hmyf2WOmhYG6z8c/3ETIM/9SMjHyMZsjASbvsCwBgK4dK80NXsWJviGsNHb1lNuhO5+oZPVhTP5lN38dn20cOV0ZGidXcyi9w9T58NksHa0Tt9i3S7L5SaT47Vg+1f76lbFBVfgeyZzrnS0VXozV9xfZaO5adnxVTo8Tc/iOwdl8a6yhE7Z+w3Zlhk59C/YtI8/URMNadh91v7roaNFerreqdtKvBmt6O14na+NegxWT1xkw5EN8Nm2b3e9juL5umuT8m0Tz6BEe+Ow9/pTELdxzt9k45lt/oi38wnURPlTbN6XFxX1Umes+saWaV6IsybAvSnbRHFJqHn7Ct7EZsLYCFXYreOsfz4Jz+rbSeFvwxZthium0Fz4ZNKGuEBuKw8R+YZpjm4Ru8ivrv/Je3GruwHTr3w2xf9CY697F1vzRu2dyVdCd2aZgN1g7bnRn+TlPgPhtI8/I9QIb7NiZJaxe2RestteEefmjM5fPkUdPO7Abus2wj9t2wCXUfw3b/tWiaK3X+JgDNL+jI927iH5/RPSH+8LXI8j2d5e5a+EBMO7NbuHuS0fhtmI7mLGzXsMlPgXvNEM0TH5nLVW+ayJeDc+zXORw8JF/UE53lC/HzMOQ1Z9D8kRuNkeGOWCMyDYbdtBTcfZTmG08pfXEEf4VpNdHdhXl+7FYtp+RvxGs9iH/l2MqSF/shwvdkeA/A98CmhfIUatw0K2meK2XsBK1b8QmStC3wdTGPWabPZe8i7XKb9JoFuN+y42H6fIFPNNPeuAhWib9WBc1nB4Qt1fFcfGSpp4VVuePrTKrkuex3Jum/05JlY5XLzICY3gPwPfDv/8Q0K2imqdTHaZ/oQUMLC55ivhaEdSNC6z3DsmmLGSOxalFHpkWM/+LcIvaaFTTfkgjz79NnEMN7Ol/VePM2mWqwvMj8oZe2ZH/Wt9sRb39s89yi+QXRPECkL47OdebBmwsiX93zeB2Y+2SWhac4TDuzwhD9THVk2jTXIuP/ZXEHJm4k8zQPYRlboHmeffQvzcgKivY8oLMs0cG/WbNsXL3gHZkWR6Jzi1eb5xbtRObJ0TxABM4EQS7oZ+FRdmHddawa/1EfZWfR+8yR7DgNa2PEjwl5R4bX7MosbNfmuYW4v8jS/HJPlZa9aX7YrwmfSC9xwx46VJa9nIXYwrQzK4ClFM9Dw2s2W0XnFjZNcyxo52le0KXllmR6DT/QNbh3Hc/lB7Ki4nWlsUWWvOYtYpVqhyvDays/t/iyyHKlKXyoaZoXHbpkeZwzzRvMoSCEHV/JrKSHffktWV9Wnc60EGY6Ks/9Fbb7w6ZpXgkvkKL5hmRbI8KqWe9mhzfwO/GCWMQanJLdbH86kXXlnCCWjdXk2EZ04qM0Lt+REvzcol0HfoT9jUivTdH1F2me+xo6lv8mCQDZHngAbfi9eFYOT8lHWoGvCPAeI7L/3jc52s99xlxkJXAFHewQ/ixYQ9GRGuF6OnqFfrMH/4E11etxzOQ03/1PR61MC9oJAGnFr8YHl8MPchBB914VIQg7s3ybI8XJ5dUeOF2YOJuv4K1exvkyhRm4orM+MYtgh4RmnTDc7ejLw/ac5VT1sQTTeJl/+SDvAaRhYyFgrznjEuVxBc1R1hBoRrxb9qXupATgDQFTBTNJEdN8TXdhd7hQzTFVgIEgcC6eyCz31uq3gQVtfI49Ap8JE0OFYNOc+iIMAnm9fbyFBBHNg1PN42LvXTn88tCiTmLLJ0dk6evgQdULGjjdRAcf8lrFyTKGxRHuHRkGsiEQvWIcIc0DzQhctWne4EZGcysRpOn7ea97BvzpV+Cazfr4ogbQx/PYtviC12xLphl+vZRXjCOk+Y9u6IfSNG8hCTA4TgJN7sgytteDWEZsVy0XGZDDCKC5LsQJIV5zM3s2bQaPsGle4S0ICGnWTJvYQuo1h1jmpuuBIH1dUOeysDGXATlr5ocDAKBVX1zykTUb2tEXxwg+idYzzZxm3TBr7wlaErOb9k7C8jW5JyHkXooT0MthlZ/g01sAx5jiefMIdqfQHX0xnMA7j5qWaS5Kc7CGGh2lA0KOkn0U9ZBz82l8IFnviNfcwN8d2ECLwWDImbD7L95TAcAZdKyvZykK0twDTPMGN0J7XiJ+D+jSVycfQ5ABHDhdk8VapwEdfIiuMGKa6zoyBR1wBh171mutIM0dZKoluzA/idMdnpK76ayxsgZIdFYdNc0zyJ1qJPZ2BCfjZcOJTAExzfgGM4WQZlL9EAFeNgMqixd++uS3EoGTniV1dIt6Q7Azm9IqpfiC3FJxg4OcCesOOBGIr97UM80FaQa85gjRLkwQOBfk/BmvA4giHF+waZbmQcUYzdqQop3Si5E0c9eO0jmDRQGmaSmK0QzKFjuEuXOtj4Rlcsy9IoYgA1hnrv1WP3lytd+ugaOY8lYQI2lJ6US8ZvgrzkNBM5JZc4HXfrrrpRJUJ+SABe8IdJc5kAjtVVuBVb9Zd5HjY1ccRCxcq6GJfj5BS/v1NL1mFc3+0xvEs9fCGx6tW4LAOSenZATZkHs5EMU3rAYlB8zaBjXRRUKMJO+pIvwH/486ZZUfweFPeoK2o6DZr04+IFpgrznC4n9JRYI5+firNYVFEQ5E8S2DdL0C4+Fadcp6O4Npbuo6cSHNNym76U8XE9BYQ4J2guRHZ9Q4/WoL28Jz2KuZlg72Q4xkkeYpr4eYZlIbIiQ0b6O84Fp7PmldjXFNPv7yUVEkAqL4lqHBnaV6Mt2RkNgEvB7sq+s7cXma/WDiDMAAau+JSEaIa3rhPv8NLfYY4gTZRRUGczM7JNMxwiSzegJvCLRNc55mf2scz0DpmWSaOQZrnUPOnizqXgIkOqswWPZIwHRxNpoYDRfO0RW0HU7zRNAmNyyP4GSoLkG94NApA7VrWxV7lIal3CPWz26DjZtmkseLec06YWA7ZGgOs8sXsNd8QNsMb6FTBmoHWS6HBHZMc32VnSYj0+nrtGNL+PUKHH1GNEez1w/dGfhQWMM065SO4d8QRRxBndliyIsOh6aT8eoUcQQpnKNvmtM0e0G4hQad5mpwSl0zXugRnDFIuzA4hLkgJIVlnEvTOzA8ENFBS8K5+kefIs28HsgQXmjJpnlCLxAkNo/q5ba8ZlbJTRPzXjPFlYBr2mkL2g6nebHlw+NVX5CDjAOi1zzHS07J28dtgqWSIyzn1JreA9T2KCshctb8mzb+IhKa/Ran7wym+YLW8pycvJyBNJU5hRNrElg9bZ4R/1UftGBf2FIQghlziGj2hTjKAexOBW+khh96BVneOM/YcmE63VhAM8WD8bqpNcq5xU/YV68XOPrkNPteEuURgARRbCd4cwKK4BxZ2UxbTAFxuYgdTNdNZcyA11wkKimk+aXVSfyYCZyK3qF4PPRCBNIu5FnrHIjiW5IJMc7ddHU5WhA97KsTghnziGgOBO4wrxnXqUa6GVnZPlrgfhQJYS4JoZrWyPSaTTq3QAqpF/CaOc1LcYbCptn/i7apEcGpQBfchVm9BETUmIzXZCeFFMC+egFB25HVBVvC4gi+Dx6e66fqZOB5UBSSzUtAUsG7pmuy0ygy7zXLaJ7AJB1h2+BlS1vgzKN1DvRgs85lJSlobr4eK40i44K2I6MZrlrgVRHxYvFUTBTJ8qzehY1hnXl7H6AKNYqxjWVn4zXZSRRhZ82kiMEs8jTDBVYDJB1iUUjgzMMLlJ/TDMmCeN1X4lt7VW/WEfLi2IxL0/FmJIpmSHZ+oVyeHM0jOG4LiZS/uTAyl6vidSlZIG4lVpNj/OMZDj1h3GNBTDMQPKoA6dwC9tXZSvuseYsczchlBseg10yP00WhqDvmYIHThBDmk0dw7Y6LTMBGkjX2tEGhCPbVC6bZ5miG44OqF9CafVZUxpYhUO3CECmQ4laCB5lxtiGcPGUprxm5P61gmm2W5gF8ZYX3Lm0lxPWxQZaVWhjiNdNqckAnmXw2/0RqvBTaC6FAfHVWrAJGluahsqxXOPSA16x9sxwC/0O6chgJYYbqUXA1ERG0LZUcQbxm0rXqeWQfW8CCdldpmkf0FHUqerLt3gi2XSQ5cbMPA3wl3gTsNTNGHGFNWBC0nTzNiNc8ValTQ3qlVTKkvSHRWcQ8VMgljlZjqM5QxV41MCQMrMBZ8xZZmpGzZpWgPTw3vGLv0JGEeSIhzA3aUgpdURKpYMhFYJaqgY2RJaSgpcjQvHyCTbPCmV3SK61q4TivrJoJYQa22qwSChCY12wnfd2GoO3kaJ7AGpbCa55oXNeqheA8twtD4qRophmqV871FcQ0axXApQM+Si/sxGVo/gNb2J5UgVzQr4XTxUHWqToxE8IM7cDC1Rgpla5byocIZENQ2InL0Axmr8sm1wbzA1MCZx7+R+bDwkKYaYsaVFOsHtaNQwq/UpcNTfwsW25WgQzNsNIpFbTv6DcnoFcFS7rMOOrw7RBE0wxtZ7mjhNzRSQoQ0AciaDcKCdpO7koTJAxMokvdkWtwVjtvZ/rBQ5mobSTxl1STY7QHDCafprB7LlymahQlK8ErkaYZEbQ7+TCwB+SqGvHp9cjRzI+s5nLn4FNEl2KaxytI6eQBHrCgLd7YZhJIDbKCXnOW5k9Y0M5fMEYvRFDtbFOvFvpHWF3RqUIU3xo6x0bjV3AoueoB+6+FMh8IgH11SrlZBVI0I7eF5ZJSR7f0uXwR2nXaZbIigjfBICGmGRG0D2eP7SZ82MzL5yGXjBYKr8SBeM2ESvAKpGhewOUjehmvebAmc+Z1opJuhHvnshCrwSHOLHRT0N5zn9WwWhbxHg4u/Fph2O1AAACnCHm9goJ2lmbYNGcP+jUKEQjXjN3RK5Hwh/3YjcOis8AbuCglwbhxR6/l1r5hTH4NWBqIr17i6DNF8xoWtNNes0YhAl+0rwWmc+xUXVoN3RWyIkzf/SkAOFwZwx9irfjRp0jzEBa00/VYlxqXhn6Iy8BEexfmBfx504HTGSQJVIjXXAaAggP3mrozqQTNE3j8U6XSl/QLwzpv6fPET+1jjtZp9KjNW603qMfSlukI7QRQGpWVMLAczcjFJheCUDGZkudyN6uQDvWdKp6eN7Z537EQNYma5uKAFBz47cpEJYk0n8K3tQoxOzf0w4rubU4HR85HJPA/IgIeLa7aglsKHUeXBGCaL2HTXCYqSaQZzmsWTPONT78WTlbnfqq9CzuIDMbI4nQWZgtck70MoPrbsK9eKipJoHmBBOLHgvYZuRCB15JG70+0JU9vGums9irvio4OLC2XARRbVPqSFhLNyFrqL+LfkVn2FJlQsKgqQxy30rbEgPsqLDt2yo6F3SipwO5PK3MRkkAzXHU3FrTpp0yBsubQi/ZJVexUXdopytoUMyIO7SVQAyop3Gu6WkZxmof3sGmOnJpPMkMt4MIw5ChMgjgJw0ZNMNbcF7cQ8E1mpVDca26UORNLaH6B3dnQax5c01lW3qK+bUd/F8ZvLTsBb1EvBFZLezkWa7IDcQ+IoF0qYDih+Q4Op29tF80BfS733sBE6Ln2sh3wBuFTqiJjn/FIT+zlyQNeMyJolwsYTmiGBW1/O8ga0djHeXc5DfptkRw8CcNwZXzmPmd8HOy6lBIA4h4QX71eKpcnpnmECNqfWiwLd7wqMNQu2+pVIytg1Ktltdes0UPu/izTGXDZHXJ/WglB2xFoXsBj3P2jEXPvHROqty5auuY5dqr+MbZss/oqH5FhTzmH4h5shYHtENOMCdrLF7LA6SPl2yJMtLdhPAnj0NAujLmNH5JVx56gDV0RD/vqJXN5YpoRr/l9Ql5kgyqJ5e0CoqmSBOuIFCNbYeZWXmUroaWa7FsAXjMSfNYsHAa2A6d5BOc1e29kGTsgXhi2wfDzSM9A8wuwkNwLClid7cvN3Ze9NRuoC4aUm62TGZWC07xEbgQjnx22PmiXkoS4udcq4epVo/17SQGDuez5h0pusOk1qyUOuNeyabacZsQ0k9GB3eUcBnfv3Q7dRsflf4s7VYy5bn9/pvYELNVkr4D7KOSEu2yaLacZNs1k9Mj3YCSYPNwf9VqBT5nWHs8IKCJtM8ZqbrO/9wjauZFFQVsdGHCIHELOtIc1hYjmIZwjRwV+fbcUg+Xd7d/7andDNpaQFWe2f9NYWnf81uuVxvPer9kJ8iHa85qhTDfYCmXurdRHRPOCnu8GsUyqqK7AcDGZX3+ef7xP4T6ieCGNSov9VXvv2+P32c8xZamxecmoun/YVy9dAeP/kHDcc71BDd8AAAAASUVORK5CYII=" alt="propaganda2">
+                <div class="container" id="img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfwIK7O_C-1S_j36ZWbYH9HogiLQ1kd-t2r0I8NUrI2u8tr5oX473XiUlq-e-bIiR0xQ&usqp=CAU" alt="propaganda">
+                </div>
+                <div class="container img2" id="img">
+                    <img src="https://conteudo.imguol.com.br/c/noticias/20/2022/07/09/urubu-do-pix-e-novo-golpe-na-praca-1657379024808_v2_615x300.jpg" alt="propaganda3">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

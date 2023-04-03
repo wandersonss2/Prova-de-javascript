@@ -1,0 +1,134 @@
+
+/*aprendi em um video a definir um padrão de cores*/
+:root{
+    --preto: #0c0c0c;
+    --branco: #fff;
+    --vermelho: #eb1e1e86;
+    --azul: #0a2d55;
+    --cinza: #636060ef;
+}   
+
+body{
+  background-color: var(--preto);
+  color: var(--branco);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+}
+
+.caixa-de-texto{
+    background-color: var(--branco);
+    margin-top: 3rem;
+    color: var(--preto);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 600px;
+    max-width: 800px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.titulo{
+    background-color: var(--azul);
+    border-radius: 10px 10px 0 0;
+    color: var(--branco);
+    font-size: 1.4rem;
+}
+
+.rodape{
+    background-color: var(--azul);
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+}
+
+input{
+    width: 50%;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+#botao{
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    padding: 10px;
+}
+
+#botao:hover{
+    background-color: var(--cinza);
+    cursor: pointer;
+    transition: .3;
+}
+
+#historico{
+    padding: 1rem;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+
+}
+
+.minha-mensagem{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.resposta-da-mensagem{
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.minhas-mensagens{
+    background-color: var(--cinza);
+    text-align: right;    
+
+}
+
+.resposta-do-chat{
+    background-color: var(--azul);
+    text-align: left;
+}
+
+.minhas-mensagens,
+.resposta-do-chat{
+    border-radius: 10px;
+    padding: 1rem;
+    color: var(--branco);
+    margin: 0;
+}
+
+.carrossel{
+    box-shadow: 10px 10px 10px var(--preto);
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 5rem;
+    display: flex;
+    height: 150px;
+}
+
+.container{                 
+    display: flex;
+    transition: transform 0.90s ease-in-out ;
+    transform: translateX(0);
+    margin-bottom: 5rem;
+    
+}
+
+img{
+    object-fit: cover;
+    width: auto;
+    padding-top: 0.5rem;
+    height:135px;
+}
+.img2{
+    margin-left: 200px;
+}
