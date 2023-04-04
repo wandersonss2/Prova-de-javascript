@@ -1,4 +1,4 @@
-const apiKey = "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"
+const apiKey = "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"
 const imgs = document.getElementById('img');
 const img = document.querySelectorAll('#img img');
 
@@ -49,6 +49,9 @@ function enviaMensagem(){
         let resposta = (response.choices[0]['text'])
         aguarde.style.display = 'none'
         mostrarPesquisa(mensagem.value,resposta)
+    })
+    .catch((e) =>{
+        console.log('Error -> ',e)
     })
 }
 
