@@ -1,4 +1,4 @@
-const apiKey = "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"
+const apiKey = "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"
 const imgs = document.getElementById('img');
 const img = document.querySelectorAll('#img img');
 
